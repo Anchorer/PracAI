@@ -1,12 +1,10 @@
-x = 5
-print (x)
+import urllib
 
-list_x = [3, "hello", 1, 7]
-print (list_x)
-print ("list_x[0]=" + list_x[0])
-print ("list_x[-1]=" + list_x[-1])  # 访问最后的元素
-print ("list_x[-2]=" + list_x[-2])  # 访问倒数第二个元素
-
+url = "https://raw.githubusercontent.com/GokuMohandas/practicalAI/master/data/titanic.csv"
+response = urllib.request.urlopen(url)
+http = response.read()
+with open('titanic.csv', 'wb') as f:
+    f.write(http)
 
 
 
